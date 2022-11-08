@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import React, { useState, useEffect, createContext } from 'react'
 
 import { housesData } from '../data'
