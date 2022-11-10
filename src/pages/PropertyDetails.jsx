@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { housesData } from '../data'
 import { Link, useParams } from 'react-router-dom'
 import { BiBed, BiBath, BiArea, BiCar } from 'react-icons/bi'
@@ -10,10 +10,14 @@ const PropertyDetails = () => {
     return house.id === parseInt(id);
   });
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <section>
       <div className='container mx-auto min-h-[800px] mb-14'>
-        <div className='flex flex-col lg:flex-row lg:items-center lg:justify-between'>
+        <div className='flex flex-col items-center text-center lg:flex-row lg:items-center lg:justify-between md:items-center md:justify-between md:flex-row'>
           <div>
             <h2 className='text-2xl font-semibold'>{house.name}</h2>
             <h3 className='text-lg mb-4'>{house.address}</h3>
@@ -22,7 +26,7 @@ const PropertyDetails = () => {
             <div className='bg-green-500 text-white px-3 rounded-full'>{house.type}</div>
             <div className='bg-violet-500 text-white px-3 rounded-full'>{house.country}</div>
           </div>
-          <div className='flex text-3xl font-semibold text-violet-600'>
+          <div className='flex text-3xl font-semibold text-violet-600 mb-4 lg:mb-0'>
             R$ {house.price}
             <div className='flex items-center text-sm'>{house.period}</div>
           </div>
@@ -54,7 +58,7 @@ const PropertyDetails = () => {
           </div>
 
           <div className='flex-1 bg-white w-full mb-8 border border-gray-300 rounded-lg px-6 py-8'>
-            <div className='flex items-center gap-x-4 mb-8'>
+            <div className='flex items-center gap-x-4 mb-8 md:flex-col md:text-center'>
               <div className='w-20 h-20 p-1 border border-gray-300 rounded-full'>
                 <img src={house.agent.image} alt="" />
               </div>

@@ -1,39 +1,47 @@
 import React from 'react'
-import { AiFillLock, AiOutlineMail } from "react-icons/ai"
 import { Link } from 'react-router-dom'
+import { AiFillLock, AiOutlineMail } from "react-icons/ai"
 
 import LoginImg from '../assets/img/login.png'
 
 const Login = () => {
   return (
-    <div className='container'>
-      <div className="max-w-[400px] mx-auto min-h-[600px] px-4 py-20">
-        <h1 className="text-2xl font-bold">Login</h1>
-        <form>
-          <div className="my-4">
-            <label>Email</label>
-            <div className="my-2 w-full relative rounded-2xl shadow-xl">
-              <input
-                className="w-full p-2 bg-primary border border-input rounded-2xl" type="email" />
-              <AiOutlineMail className="absolute right-2 top-3 text-gray-400" />
+    <section className='h-full max-h-[640px] mb-8 xl:mb-24'>
+      <div className='flex flex-col lg:flex-row'>
+        <div className='xl:ml-[135px] flex flex-col items-center lg:items-start text-center lg:text-left justify-center flex-1 px-4 lg:px-0'>
+          <div className="w-full mx-auto min-h-[600px] px-0 py-0 md:px-10 md:py-20">
+            <h1 className="text-2xl font-bold">Login</h1>
+            <form>
+              <div className="my-4">
+                <label>Email</label>
+                <div className="my-2 w-full relative rounded-2xl shadow-xl">
+                  <input
+                    className='border border-gray-300 focus:border-violet-700 outline-none rounded w-full px-4 h-14 text-sm' type="email" />
+                  <AiOutlineMail className="absolute right-2 top-5 text-gray-400" />
+                </div>
+              </div>
+              <div className="my-4">
+                <label>Senha</label>
+                <div className="my-2 w-full relative rounded-2xl shadow-xl">
+                  <input
+                    className='border border-gray-300 focus:border-violet-700 outline-none rounded w-full px-4 h-14 text-sm' type="password" />
+                  <AiFillLock className="absolute right-2 top-5 text-gray-400" />
+                </div>
+              </div>
+              <button className='bg-violet-700 hover:bg-violet-800 text-white rounded p-4 text-sm w-full transition'>Entrar</button>
+            </form>
+            <div className='flex w-full justify-center items-center py-4 text-base'>
+              <p className="">Não tem uma conta?<Link to="/register" className='text-violet-700 hover:border-violet-500 hover:text-violet-500 rounded p-4 w-full transition'>Registre-se</Link></p>
             </div>
           </div>
-          <div className="my-4">
-            <label>Senha</label>
-            <div className="my-2 w-full relative rounded-2xl shadow-xl">
-              <input
-                className="w-full p-2 bg-primary border border-input rounded-2xl" type="password" />
-              <AiFillLock className="absolute right-2 top-3 text-gray-400" />
-            </div>
-          </div>
-          <button className="w-full my-2 p-3 bg-button text-btnText rounded-xl shadow-xl">Entrar</button>
-        </form>
-        <p className="my-4 flex justify-center">Não tem uma conta? <Link to="/signup" className="text-accent mx-1 uppercase">Inscreva-se</Link></p>
+        </div>
+
+        {/* Left side */}
+        <div className='hidden flex-1 lg:flex justify-center items-start'>
+          <img src={LoginImg} alt="Banner" />
+        </div>
       </div>
-      <div className='hidden flex-1 lg:flex justify-end items-end'>
-        <img src={LoginImg} alt="Banner" />
-      </div>
-    </div>
+    </section>
   )
 }
 
