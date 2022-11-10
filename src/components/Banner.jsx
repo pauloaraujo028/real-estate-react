@@ -15,7 +15,7 @@ const Banner = () => {
             Precisa de um lugar para morar, mas fica cansado só de ver a lista de documentos exigidos para locação? Aqui é diferente! Com experiência no mercado imobiliário, nós encontramos o seu lugar e resolvemos tudo com facilidade e rapidez.
           </p>
           <p className='max-w-[480px] mb-8'>
-            Entre em contato agora com (nome da imobiliária) e verá como é fácil alugar! Vem com a gente!
+            Entre em contato agora com <span className='text-violet-700'>Multi Home</span> e verá como é fácil alugar! Vem com a gente!
           </p>
         </div>
         <div className='hidden flex-1 lg:flex justify-end items-end'>

@@ -8,7 +8,7 @@ const Footer = () => {
   const year = new Date().getFullYear()
 
   return (
-    <div className="max-h-[640px] mt-8 p-8 text-white bg-black mx-auto">
+    <div className="max-h-[640px] mt-8 pt-8 px-8 text-white bg-black mx-auto">
       <div className="grid md:grid-cols-2">
         <div className="flex justify-evenly w-full md:max-w-[350px] uppercase py-4">
           <div>
