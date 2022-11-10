@@ -11,25 +11,25 @@ const PriceRangeDropdown = () => {
 
   const prices = [
     {
-      value: 'Price range (any)',
+      value: 'Faixa de Preço (todos)',
     },
     {
-      value: 'R$ 100000 - 130000',
+      value: 'R$ 10.000 - 13.000',
     },
     {
-      value: 'R$ 130000 - 160000',
+      value: 'R$ 13.000 - 16.000',
     },
     {
-      value: 'R$ 160000 - 190000',
+      value: 'R$ 16.000 - 19.000',
     },
     {
-      value: 'R$ 190000 - 220000',
+      value: 'R$ 19.000 - 22.000',
     },
     {
-      value: 'R$ 10000 - 30000',
+      value: 'R$ 1.000 - 3.000',
     },
     {
-      value: 'R$ 30000 - 40000',
+      value: 'R$ 3.000 - 4.000',
     },
   ]
 
@@ -39,7 +39,7 @@ const PriceRangeDropdown = () => {
         <RiWallet3Line className='dropdown-icon-primary' />
         <div>
           <div className='text-[15px] font-medium leading-tight'>{price}</div>
-          <div className='text-[13px ]'>Choose price range</div>
+          <div className='text-[13px ]'>Selecione a faixa</div>
         </div>
         {isOpen ? (<RiArrowUpSLine className='dropdown-icon-secondary' />
         ) : (<RiArrowDownSLine className='dropdown-icon-secondary' />)}

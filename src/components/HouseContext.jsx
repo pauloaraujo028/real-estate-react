@@ -7,18 +7,18 @@ export const HouseContext = createContext()
 
 const HouseContextProvider = ({ children }) => {
   const [houses, setHouses] = useState(housesData)
-  const [country, setCountry] = useState('location (any)')
+  const [country, setCountry] = useState('Localização (todos)')
   const [countries, setCountries] = useState([])
-  const [property, setProperty] = useState('Property type (any)')
+  const [property, setProperty] = useState('Propriedade (todos)')
   const [properties, setProperties] = useState([])
-  const [price, setPrice] = useState('Price range (any)')
+  const [price, setPrice] = useState('Faixa de Preço (todos)')
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     const allCountries = houses.map((house) => {
       return house.country;
     });
-    const uniqueCountries = ['Location (any)', ...new Set(allCountries)]
+    const uniqueCountries = ['Localização (todos)', ...new Set(allCountries)]
 
     setCountries(uniqueCountries);
   }, [houses]);
@@ -27,7 +27,7 @@ const HouseContextProvider = ({ children }) => {
     const allProperties = houses.map((house) => {
       return house.type;
     });
-    const uniqueProperties = ['Location (any)', ...new Set(allProperties)]
+    const uniqueProperties = ['Selecione o tipo (todos)', ...new Set(allProperties)]
 
     setProperties(uniqueProperties);
   }, [houses]);
@@ -36,7 +36,7 @@ const HouseContextProvider = ({ children }) => {
     setLoading(true);
 
     const isDefault = (str) => {
-      return str.split(' ').includes('(any)');
+      return str.split(' ').includes('(todos)');
     }
 
     const minPrice = parseInt(price.split(' ')[1]);

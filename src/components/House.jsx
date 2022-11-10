@@ -1,8 +1,8 @@
 import React from 'react'
-import { BiBed, BiBath, BiArea } from 'react-icons/bi'
+import { BiBed, BiBath, BiArea, BiCar } from 'react-icons/bi'
 
 const House = ({ house }) => {
-  const { image, type, country, address, bedrooms, bathrooms, surface, price } = house;
+  const { image, type, country, address, bedrooms, bathrooms, surface, garage, price, period } = house;
 
   return (
     <div className='bg-white shadow-1 p-5 rounded-lg rounded-tl-[90px] w-full max-w-[352px] mx-auto cursor-pointer hover:shadow-2xl transition'>
@@ -19,24 +19,35 @@ const House = ({ house }) => {
           </div>
           <div>{bedrooms}</div>
         </div>
-      </div>
-      <div>
-        <div className='flex items-center text-gray-600 gap-1'>
-          <div className='text-[20px]'>
-            <BiBath />
+        <div>
+          <div className='flex items-center text-gray-600 gap-1'>
+            <div className='text-[20px]'>
+              <BiBath />
+            </div>
+            <div>{bathrooms}</div>
           </div>
-          <div>{bathrooms}</div>
+        </div>
+        <div>
+          <div className='flex items-center text-gray-600 gap-1'>
+            <div className='text-[20px]'>
+              <BiArea />
+            </div>
+            <div>{surface}</div>
+          </div>
+        </div>
+        <div>
+          <div className='flex items-center text-gray-600 gap-1'>
+            <div className='text-[20px]'>
+              <BiCar />
+            </div>
+            <div>{garage}</div>
+          </div>
         </div>
       </div>
-      <div>
-        <div className='flex items-center text-gray-600 gap-1'>
-          <div className='text-[20px]'>
-            <BiArea />
-          </div>
-          <div>{surface}</div>
-        </div>
+      <div className='flex text-lg font-semibold text-violet-600 mb-4'>
+        R$ {price}
+        <div className='flex items-center text-xs'>{period}</div>
       </div>
-      <div className='text-lg font-semibold text-violet-600 mb-4'>{price}</div>
     </div>
   )
 }
